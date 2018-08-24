@@ -3,3 +3,8 @@
 
 <h3>Author</h3>
 <a href="/users/<%=@tweet.user.slug%>"><%= @tweet.user.username %></a>
+
+<form action="/tweets/<%=@tweet.id%>" method="post">
+  <input type="hidden" id="hidden" name="_method" value="delete">
+  <input type="submit" value="delete">
+</form>
