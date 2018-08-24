@@ -35,6 +35,7 @@ class TweetsController < ApplicationController
     end
   end
 
+
   delete '/tweets/:id' do
     tweet = Tweet.find_by_id(params[:id])
     if current_user.id == tweet.user.id
