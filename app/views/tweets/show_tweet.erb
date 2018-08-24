@@ -1,0 +1,5 @@
+<h3>Tweet</h3>
+<%= @tweet.content %>
+
+<h3>Author</h3>
+<a href="/users/<%=@tweet.user.slug%>"><%= @tweet.user.username %></a>
