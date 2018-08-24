@@ -26,6 +26,16 @@ class TweetsController < ApplicationController
     end
   end
 
+  delete '/tweets/:id' do
+    tweet = Tweet.find_by_id(params[:id])
+    if current_user == tweet.user.id
+      tweet.destroy
+      redirect '/tweets'
+    else
+      redirect "/tweets/#{tweet.id}"
+    end
+  end
+
   post '/tweets' do
     user = current_user
     tweet = Tweet.new(content: params[:content])
