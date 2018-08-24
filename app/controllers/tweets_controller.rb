@@ -26,7 +26,7 @@ class TweetsController < ApplicationController
     end
   end
 
-  post 'tweets' do
+  post '/tweets' do
     user = current_user
     tweet = Tweet.new(content: params[:content])
     if tweet.save
